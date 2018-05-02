@@ -3,7 +3,7 @@ import { Switch, Route, Link, Redirect } from 'react-router-dom';
 import Home from '../components/Home';
 import Company from '../components/Company';
 import Park from '../components/Park';
-import styles from './index.css';
+import './index.css';
 
 class Main extends Component {
     // constructor (props) {
@@ -15,7 +15,7 @@ class Main extends Component {
 
     render () {
         return (
-            <main className={styles.main}>
+            <main className={'main'}>
                 <nav>
                     <Link to='/'>{'Home'}</Link>&nbsp;&#x3000;
                     <Link to='/company'>{'Company'}</Link>&nbsp;&#x3000;

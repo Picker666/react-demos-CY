@@ -1,9 +1,10 @@
-import React from 'react';
+// import React from 'react';
 
 const ShowStaffMsg = WrapperComponent => {
     return class Enhancer extends WrapperComponent {
-        showStaffMsg = (data) => {
-            console.log('this is data for show staff msg: ', this.state);
+        showStaffMsg = () => {
+            const { actions } = this.props;
+            actions.showAction();
         };
 
         render () {

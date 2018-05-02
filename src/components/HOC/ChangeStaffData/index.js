@@ -1,10 +1,13 @@
-import React from 'react';
+// import React from 'react';
 
 const ChangeStaffData = WrapperComponent => {
     return class Enhancer extends WrapperComponent {
         
-        changeStaffData = (data) => {
-            console.log('this is data for change staff data: ', data);
+        changeStaffData = () => {
+            const { name, staffId, department, work } = this.state;
+           const { actions: { changeAction } } = this.props;
+           changeAction({ name, staffId, department, work })
+           this.handleCancel();
         };
 
         render () {

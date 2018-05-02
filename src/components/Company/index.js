@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import { Switch, Route, Link, Redirect } from 'react-router-dom';
-import {bindActionCreators} from 'redux'
-import {connect} from 'react-redux'
 import FontEnd from './FontEnd';
 import BackEnd from './BackEnd';
 import Test from './Test';
 import Manage from './Manage';
-import { addAction, deleteAction, changeAction, showAction } from '../../redux/company';
 
 class Company extends Component {
     componentDidMount () {
@@ -37,14 +34,4 @@ class Company extends Component {
     };
 };
 
-export default connect(state => ({
-    // company: state.company
-  }), dispatch => ({
-    dispatch,
-    actions: bindActionCreators({
-        addAction,
-        deleteAction,
-        changeAction,
-        showAction
-    }, dispatch)
-  }))(Company);
+export default Company;
