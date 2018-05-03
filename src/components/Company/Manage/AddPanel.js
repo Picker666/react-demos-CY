@@ -37,7 +37,7 @@ class AddPanel extends Component {
     handleComfirm = () => {
         const { isModify } = this.props;
         if (isModify) {
-            this.ChangeStaffData();
+            this.changeStaffData();
         } else {
             this.addStaff()
         };

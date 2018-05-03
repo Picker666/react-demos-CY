@@ -28,7 +28,7 @@ class Manage extends Component {
         const { staffId: modifyStaffId } = this.state;
         const staffMsg = staffData && staffData.map(item => {
             const { name, staffId, department, work } = item;
-            if (modifyStaffId) {
+            if (modifyStaffId === staffId) {
                 const addPanelProps = {
                     ...item,
                     key: modifyStaffId,

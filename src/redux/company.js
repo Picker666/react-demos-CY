@@ -35,7 +35,17 @@ export default handleActions({
         return { ...state, staffData: staffDataNew };
     },
     [CHANGE]: ( state, action ) => {
-        return { ...state };
+        const { payload: { name, staffId, department, work } } = action;
+        const { staffData } = state;
+        const staffDataNew = staffData.map(item => {
+            const { staffId: _staffId } = item;
+            if (staffId === _staffId) {
+                return { name, staffId, department, work };
+            } else {
+                return item;
+            }
+        });
+        return { ...state, staffData: staffDataNew };
     },
     [SHOW]: ( state, action ) => {
         return { ...state, ...defaultState };
