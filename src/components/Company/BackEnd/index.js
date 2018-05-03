@@ -6,8 +6,8 @@ class BackEnd extends Component {
     };
 
     render () {
-        const { match } = this.props;
-        console.log(match)
+        // const { match } = this.props;
+        // console.log(match)
         return (
             <div>
                 <h4>{'this is BackEnd.....'}</h4>

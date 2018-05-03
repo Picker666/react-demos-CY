@@ -10,19 +10,22 @@
 }
 li {
     border-bottom: solid 1px #fff;
+    
+    span {
+        padding: 10px 0;
+        display: inline-block;
+        text-align: center;
+        height: 100%;
+        width: 100px;
+        /* border-bottom: solid 1px #fff; */
+        border-left: solid 1px #fff;
+
+        input {
+            width: 90%;
+        }
+    }
 }
-li > span {
-    padding: 10px 0;
-    display: inline-block;
-    text-align: center;
-    height: 100%;
-    width: 100px;
-    /* border-bottom: solid 1px #fff; */
-    border-left: solid 1px #fff;
-}
-li > span > input {
-    width: 90%;
-}
+
 li > span:nth-of-type(1) {
     border-left: none;
 }
@@ -37,4 +40,12 @@ li > span:nth-of-type(4) {
 }
 li > span:nth-of-type(5) {
     width: 200px;
+}
+
+.resetNavLink{
+    text-decoration: none;
+}
+.navActive {
+    color: blue;
+    text-decoration: underline;
 }

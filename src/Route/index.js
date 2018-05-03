@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Switch, Route, Link, Redirect } from 'react-router-dom';
+import { Switch, Route, Redirect, NavLink } from 'react-router-dom';
 import Home from '../components/Home';
 import Company from '../components/Company';
 import Park from '../components/Park';
-import './index.css';
+import './index.scss';
 
 class Main extends Component {
     // constructor (props) {
@@ -15,17 +15,17 @@ class Main extends Component {
 
     render () {
         return (
-            <main className={'main'}>
+            <main className={'mainSec'}>
                 <nav>
-                    <Link to='/'>{'Home'}</Link>&nbsp;&#x3000;
-                    <Link to='/company'>{'Company'}</Link>&nbsp;&#x3000;
-                    <Link to='/park'>{'park'}</Link>
+                    <NavLink className="resetNavLink" activeClassName='navActive' to='/home'>{'Home'}</NavLink>&nbsp;&#x3000;
+                    <NavLink className="resetNavLink" activeClassName='navActive' to='/company'>{'Company'}</NavLink>&nbsp;&#x3000;
+                    <NavLink className="resetNavLink" activeClassName='navActive' to='/park'>{'park'}</NavLink>
                 </nav>
                 <Switch>
-                    <Route exact path='/' component={Home} />
+                    <Route exact path='/home' component={Home} />
                     <Route path='/company' component={Company} />
                     <Route exact path='/park' component={Park} />
-                    <Redirect to='/' />
+                    <Redirect to='/home' />
                 </Switch>
             </main>  
         )

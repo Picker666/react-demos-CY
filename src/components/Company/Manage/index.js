@@ -5,7 +5,7 @@ import { AddStaff, ChangeStaffData, DeleteStaff, ShowStaffMsg } from '../../HOC'
 import AddPanel from './AddPanel';
 // import { list } from 'postcss';
 import { addAction, deleteAction, changeAction, showAction } from '../../../redux/company';
-import './index.css';
+import './index.scss';
 
 
 const Enhancer = compose(AddStaff, ChangeStaffData, DeleteStaff, ShowStaffMsg);
@@ -20,7 +20,7 @@ class Manage extends Component {
     };
 
     componentDidMount () {
-        console.log('this is Manage...', this.props);
+        // console.log('this is Manage...', this.props);
     };
 
     getLiItem = () => {

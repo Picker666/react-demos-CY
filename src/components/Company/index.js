@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route, Link, Redirect } from 'react-router-dom';
+import { Switch, Route, NavLink, Redirect } from 'react-router-dom';
 import FontEnd from './FontEnd';
 import BackEnd from './BackEnd';
 import Test from './Test';
@@ -12,22 +12,25 @@ class Company extends Component {
 
     render () {
         const { match } = this.props;
-        console.log(match);
+        // console.log(match);
         return (
             <div>
                 <p>{'this is Company.....'}</p>
                 <nav>
-                    <Link to='/company/'>{'FontEnd'}</Link>&nbsp;&#x3000;
-                    <Link to='/company/backEnd/backEnd'>{'backEnd'}</Link>&nbsp;&#x3000;
-                    <Link to='/company/test/test'>{'test'}</Link>&nbsp;&#x3000;
-                    <Link to='/company/manager/manager'>{'manager'}</Link>
+                    <NavLink className="resetNavLink" activeClassName='navActive' to='/company/fontEnd'>{'FontEnd'}</NavLink>&nbsp;&#x3000;
+                    <NavLink className="resetNavLink" activeClassName='navActive' to='/company/backEnd'>{'BackEnd'}</NavLink>&nbsp;&#x3000;
+                    <NavLink className="resetNavLink" activeClassName='navActive' to='/company/test'>{'Test'}</NavLink>&nbsp;&#x3000;
+                    <NavLink className="resetNavLink" activeClassName='navActive' to='/company/manager'>{'Manager'}</NavLink>
                 </nav>
                 <Switch>
-                    <Route exact path={`${match.path}/`} component={FontEnd} />
-                    <Route exact path={`${match.path}/backEnd/:department`} component={BackEnd} />
-                    <Route exact path={`${match.path}/test/:department`} component={Test} />
-                    <Route exact path={`${match.path}/manager/:department`} component={Manage} />
-                    <Redirect to='company/FontEnd/' />
+                    <Route exact path={`${match.path}/:department`} render={(props) => {
+                            const { match: { params: {department} }} = props;
+                            console.log(department);
+                            const temp = {fontEnd: <FontEnd />, backEnd: <BackEnd />, test: <Test />, manager: <Manage />}
+                            return temp[department];
+                        }}
+                    />
+                    <Redirect to='company/fontEnd/' />
                 </Switch>
             </div>
         );
