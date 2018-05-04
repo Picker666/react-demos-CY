@@ -71,8 +71,8 @@ class Manage extends Component {
         return (
             <div>
                 <h2>{'this is Manage panel.....'}</h2>
-                <button onClick={this.showStaffMsg}>{'查询'}</button>&nbsp;&#x3000;
-                <button onClick={this.readyAdd}>{'添加'}</button>
+                <button onClick={this.showStaffMsg}>{'Reset'}</button>&nbsp;&#x3000;
+                <button onClick={this.readyAdd}>{'Add'}</button>
                 <main>
                     <ul className={'list'}>
                         <li key={1}>
@@ -83,9 +83,7 @@ class Manage extends Component {
                             <span>{'Operation'}</span>
                         </li>
                         {this.getLiItem()}
-                        {isReadyAdd &&
-                            <AddPanel cancelAdd={this.cancelAdd}/>
-                        }
+                        { isReadyAdd && <AddPanel cancelAdd={this.cancelAdd}/> }
                     </ul>
                 </main>
             </div>
