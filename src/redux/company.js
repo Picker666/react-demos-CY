@@ -1,9 +1,9 @@
 import { createAction, handleActions } from 'redux-actions';
 
 const defaultState = {
-    staffData: [{staffId: 74, name: 'Picker', department: 'B/E', work: 'write code for UI'},
-        {staffId: 73, name: 'Kobe', department: 'B/E', work: 'write code for data'},
-        {staffId: 72, name: 'Could', department: 'F/E', work: 'write code and test'},
+    staffData: [{staffId: 74, name: 'Picker', department: 'B/E', work: 'write code for UI.'},
+        {staffId: 73, name: 'Kobe', department: 'B/E', work: 'write code for data.'},
+        {staffId: 72, name: 'Could', department: 'F/E', work: 'write code and test.'},
         {staffId: 71, name: 'Gavin', department: 'All', work: 'look at them writting code and testing.'}
     ],
     name: 'SunShine',
