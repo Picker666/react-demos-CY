@@ -6,7 +6,7 @@ const defaultState = {
         {staffId: 72, name: 'Could', department: 'F/E', work: 'write code and test'},
         {staffId: 71, name: 'Gavin', department: 'All', work: 'look at them writting code and testing.'}
     ],
-    name: 'ShineMo',
+    name: 'SunShine',
     orgId: 12346789
 };
 
