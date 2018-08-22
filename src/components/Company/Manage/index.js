@@ -70,6 +70,7 @@ class Manage extends Component {
         const { isReadyAdd } = this.state;
         return (
             <div>
+                <h1>{`company: ${this.props.name}`}</h1>
                 <h2>{'this is Manage panel.....'}</h2>
                 <button onClick={this.showStaffMsg}>{'Reset'}</button>&nbsp;&#x3000;
                 <button onClick={this.readyAdd}>{'Add'}</button>
@@ -92,7 +93,8 @@ class Manage extends Component {
 };
 
 export default connect(state => ({
-    staffData: state.company.staffData
+    staffData: state.company.staffData,
+    name: state.company.name
   }), dispatch => ({
     dispatch,
     actions: bindActionCreators({

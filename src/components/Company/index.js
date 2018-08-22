@@ -23,8 +23,8 @@ class Company extends Component {
                     <NavLink className="resetNavLink" activeClassName='navActive' to='/company/manager'>{'Manager'}</NavLink>
                 </nav>
                 <Switch>
-                    <Route exact path={`${match.path}/:department`} render={(props) => {
-                            const { match: { params: {department} }} = props;
+                    <Route exact path={`${match.path}/:department`} render={(localtions) => {
+                            const { match: { params: {department} }} = localtions;
                             console.log(department);
                             const temp = {fontEnd: <FontEnd />, backEnd: <BackEnd />, test: <Test />, manager: <Manage />}
                             return temp[department];
