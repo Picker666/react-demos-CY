@@ -3,23 +3,20 @@ import { Switch, Route, Redirect, NavLink } from 'react-router-dom';
 import Home from '../components/Home';
 import Company from '../components/Company';
 import Park from '../components/Park';
-import './index.scss';
+import styles from './index.scss';
 
 class Main extends Component {
-    // constructor (props) {
-    //     super(props);
-    // };
     componentDidMount () {
         console.log('this is Main...');
     };
 
     render () {
         return (
-            <main className={'mainSec'}>
+            <main className={styles.mainSec}>
                 <nav>
-                    <NavLink className="resetNavLink" activeClassName='navActive' to='/home'>{'Home'}</NavLink>&nbsp;&#x3000;
-                    <NavLink className="resetNavLink" activeClassName='navActive' to='/company'>{'Company'}</NavLink>&nbsp;&#x3000;
-                    <NavLink className="resetNavLink" activeClassName='navActive' to='/park'>{'park'}</NavLink>
+                    <NavLink className={styles.resetNavLink} activeClassName={styles.navActive} to='/home'>{'Home'}</NavLink>&nbsp;&#x3000;
+                    <NavLink className={styles.resetNavLink} activeClassName={styles.navActive} to='/company'>{'Company'}</NavLink>&nbsp;&#x3000;
+                    <NavLink className={styles.resetNavLink} activeClassName={styles.navActive} to='/park'>{'park'}</NavLink>
                 </nav>
                 <Switch>
                     <Route exact path='/home' component={Home} />

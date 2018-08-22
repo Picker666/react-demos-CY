@@ -5,7 +5,7 @@ import { AddStaff, ChangeStaffData, DeleteStaff, ShowStaffMsg } from '../../HOC'
 import AddPanel from './AddPanel';
 // import { list } from 'postcss';
 import { addAction, deleteAction, changeAction, showAction } from '../../../redux/company';
-import './index.scss';
+import styles from './index.scss';
 
 
 const Enhancer = compose(AddStaff, ChangeStaffData, DeleteStaff, ShowStaffMsg);
@@ -75,7 +75,7 @@ class Manage extends Component {
                 <button onClick={this.showStaffMsg}>{'Reset'}</button>&nbsp;&#x3000;
                 <button onClick={this.readyAdd}>{'Add'}</button>
                 <main>
-                    <ul className={'list'}>
+                    <ul className={styles.list}>
                         <li key={1}>
                             <span>{'Name'}</span>
                             <span>{'StaffId'}</span>

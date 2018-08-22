@@ -204,9 +204,22 @@ module.exports = {
               name: 'static/media/[name].[hash:8].[ext]',
             },
           },
+    //       {
+    // 　　　　test:/\.scss$/,
+    // 　　　　loaders:['style-loader', 'css-loader', 'sass-loader']
+    //   　　}
           {
     　　　　test:/\.scss$/,
-    　　　　loaders:['style-loader', 'css-loader', 'sass-loader']
+            use: ['style-loader',
+              {
+                loader: 'css-loader',
+                options: {
+                  module: true,
+                  localIdentName: '[name]-[local]-[hash:base64:6]'
+                }
+              },
+              'sass-loader'
+            ]
       　　}
         ],
       },

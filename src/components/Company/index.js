@@ -4,6 +4,7 @@ import FontEnd from './FontEnd';
 import BackEnd from './BackEnd';
 import Test from './Test';
 import Manage from './Manage';
+import styles from '../../Route/index.scss';
 
 class Company extends Component {
     componentDidMount () {
@@ -17,10 +18,10 @@ class Company extends Component {
             <div>
                 <p>{'this is Company.....'}</p>
                 <nav>
-                    <NavLink className="resetNavLink" activeClassName='navActive' to='/company/fontEnd'>{'FontEnd'}</NavLink>&nbsp;&#x3000;
-                    <NavLink className="resetNavLink" activeClassName='navActive' to='/company/backEnd'>{'BackEnd'}</NavLink>&nbsp;&#x3000;
-                    <NavLink className="resetNavLink" activeClassName='navActive' to='/company/test'>{'Test'}</NavLink>&nbsp;&#x3000;
-                    <NavLink className="resetNavLink" activeClassName='navActive' to='/company/manager'>{'Manager'}</NavLink>
+                    <NavLink className={styles.resetNavLink} activeClassName={styles.navActive} to='/company/fontEnd'>{'FontEnd'}</NavLink>&nbsp;&#x3000;
+                    <NavLink className={styles.resetNavLink} activeClassName={styles.navActive} to='/company/backEnd'>{'BackEnd'}</NavLink>&nbsp;&#x3000;
+                    <NavLink className={styles.resetNavLink} activeClassName={styles.navActive} to='/company/test'>{'Test'}</NavLink>&nbsp;&#x3000;
+                    <NavLink className={styles.resetNavLink} activeClassName={styles.navActive} to='/company/manager'>{'Manager'}</NavLink>
                 </nav>
                 <Switch>
                     <Route exact path={`${match.path}/:department`} render={(localtions) => {
